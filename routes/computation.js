@@ -3,7 +3,7 @@ var router = express.Router();
  
 router.get('/', function(req, res, next) {
     // Generate random values for x and y
-    let x = Math.random() * 100;
+    let x = req.query.x ? parseFloat(req.query.x) : Math.random()* 100;
     let y = Math.random() * 100;
  
     // Apply Math.atan2() to calculate the angle in radians
